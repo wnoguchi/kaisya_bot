@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 class TimeMessenger
   def self.get_message(year, month, mday, wday, hour)
     # 曜日を取得する
@@ -7,13 +7,24 @@ class TimeMessenger
     case hour
     when 8
       ret = "おはようございます！今日は" << get_time_str(year, month, mday, wday) << "です。"
+      if weekday == :sat or weekday == :sun
+        ret <<= "何して過ごしましょうか？"
+      end
       ret
     when 9
       "始業時刻です" if not (weekday == :sat or weekday == :sun)
     when 12
+      if weekday == :sat or weekday == :sun
+        "お昼です"
+      else
         "お昼休みです"
+      end
     when 13
+      if weekday == :sat or weekday == :sun
+        "午後は何をして過ごしましょうか"
+      else
         "午後の部開始です"
+      end
     when 15
       if weekday == :sat or weekday == :sun
         "15 時になりました"
@@ -29,9 +40,9 @@ class TimeMessenger
         end
       end
     when 20
-      "blah blah blah"
+      "(´･_･`)"
     when 21
-      "foo bar blah"
+      "(´･_･`)"
     when 22
       if weekday == :sat or weekday == :sun
         "明日は会社です。がんばりましょう・・・。" if weekday == :sun
@@ -43,7 +54,7 @@ class TimeMessenger
     when 1
       "おやすみなさい"
     when 2
-      "Are you fine? #info"
+      "zzz..."
     else
       nil
     end
