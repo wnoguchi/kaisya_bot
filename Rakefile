@@ -1,5 +1,7 @@
 require 'rake/testtask'
 
+task default: :test
+
 desc "Execute All Test"
 Rake::TestTask.new do |t|
   t.libs << "test"
