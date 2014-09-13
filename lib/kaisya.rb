@@ -1,13 +1,15 @@
 #!/usr/bin/env ruby
 
-require 'twitter'
-require './time_messenger'
+$:.unshift File.dirname(__FILE__)
 
-Twitter.configure do |config|
+require 'twitter'
+require 'time_messenger'
+
+client = Twitter::REST::Client.new do |config|
   config.consumer_key = 'xxxxx'
   config.consumer_secret = 'xxxxx'
-  config.oauth_token = 'xxxxx'
-  config.oauth_token_secret = 'xxxxx'
+  config.access_token = 'xxxxx'
+  config.access_token_secret = 'xxxxx'
 end
 
 now = Time.now
@@ -16,9 +18,9 @@ message = TimeMessenger.get_message(now.year, now.month, now.mday, now.wday, now
 begin
   puts message
   if message
-    client = Twitter::Client.new
     client.update("#{message} #kaisya_bot")
   end
 rescue => e
   p e
 end
+
