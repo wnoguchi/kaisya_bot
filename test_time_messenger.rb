@@ -1,5 +1,5 @@
 
-require 'time_messenger'
+require './time_messenger'
 require 'test/unit'
 
 class TestTimeMessenger < Test::Unit::TestCase
