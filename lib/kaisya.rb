@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
 require 'twitter'
-require 'time_messenger'
+require './time_messenger'
 
 Twitter.configure do |config|
   config.consumer_key = 'xxxxx'

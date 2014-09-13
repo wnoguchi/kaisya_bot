@@ -1,6 +1,6 @@
 
-require './time_messenger'
 require 'test/unit'
+require 'time_messenger'
 
 class TestTimeMessenger < Test::Unit::TestCase
   def test_weekday
