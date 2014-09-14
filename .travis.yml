@@ -2,7 +2,4 @@ language: ruby
 rvm:
 - 2.0.0
 bundler_args: --without deployment
-notifications:
-  hipchat:
-    rooms:
-      secure: XB3tMMaWQIp3Alnz2G4lqQjVv1O18mbG0h3+B8RAeVHt0VHgqJyCQb5uqBPHLVqZpXvAGY2EbD0+7vVyuhM0MDtwz+lWEWpeU1DEDOEjePD1az4VY2dydvJ8E73zWUV1N8tHS+MN96Fzrz6nX0sxq+KBpjOP8tJ7dsQnlqqlYo8=
+
